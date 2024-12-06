@@ -14,15 +14,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js (GitHub Pages requires this for deployment)
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-
-    # Step 3: Deploy to GitHub Pages
+    # Step 2: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: . # Publish the current directory
+        publish_dir: . # Publish the current directory (where the HTML file is)
